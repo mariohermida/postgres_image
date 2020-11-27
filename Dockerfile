@@ -12,6 +12,8 @@ VOLUME  ["/etc/postgresql", "/var/log/postgresql", "/var/lib/postgresql"]
 ADD entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 USER postgres
+RUN mkdir hola
+WORKDIR /hola
 ENV PASS=secret
 ENV BBDD=pgdb
 ENV USER=pguser
